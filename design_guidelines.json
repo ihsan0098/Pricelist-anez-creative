@@ -1,0 +1,343 @@
+{
+  "project_name": "Anez Creative — Luxury Wedding Photography & Cinematic Pricelist",
+  "app_type": "marketing_site / landing_page for wedding photography & cinematography studio",
+  "locale": {
+    "language": "id-ID",
+    "country": "Indonesia",
+    "currency": "IDR",
+    "currency_format": "Rp X.XXX.000 / Rp X,Xjt",
+    "whatsapp_contact": "6282291840341",
+    "whatsapp_display": "0822-9184-0341",
+    "instagram": "@anez.creative",
+    "city": "Padang, Sumatera Barat"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "'Playfair Display Variable', serif",
+      "body": "'DM Sans Variable', sans-serif",
+      "mono": "'JetBrains Mono Variable', monospace",
+      "accent": "'Playfair Display Variable', italic"
+    },
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 22,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "headings": "font-serif tracking-tight font-medium text-amber-100/95 leading-[1.15]",
+      "subheadings": "font-sans font-light tracking-wide text-stone-300 text-lg leading-relaxed",
+      "overline": "font-mono uppercase text-xs tracking-[0.25em] text-amber-400/80 font-medium",
+      "body": "font-sans text-base text-stone-300 leading-relaxed font-normal",
+      "pricing_numbers": "font-serif text-3xl sm:text-4xl font-semibold text-amber-200 tracking-tight"
+    }
+  },
+  "colors": {
+    "palette_name": "Archetype 5: Dark Luxury Gold & Midnight Obsidian",
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#0B0C0E",
+        "on_bg": "#F5F3EF",
+        "on_bg_muted": "#A8A29E",
+        "roles": {
+          "border": "#27272A",
+          "accent_gold": "#D4AF37",
+          "gold_glow": "#F59E0B",
+          "link": "#FDE68A",
+          "badge_bg": "#1C1917"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#141518",
+        "on_bg": "#FAF8F5",
+        "on_bg_muted": "#B5AFA6",
+        "roles": {
+          "border": "#2E2A24",
+          "card_highlight": "#383226"
+        }
+      },
+      {
+        "name": "gold_card_featured",
+        "kind": "solid",
+        "bg": "#1A1713",
+        "on_bg": "#FFFBEB",
+        "on_bg_muted": "#D6C7B2",
+        "roles": {
+          "border": "#D4AF37",
+          "accent_badge": "#D97706"
+        }
+      },
+      {
+        "name": "hero",
+        "kind": "image",
+        "contrast_against": "#0B0C0E",
+        "guarantee": "scrim: linear-gradient(180deg, rgba(11,12,14,0.4) 0%, rgba(11,12,14,0.85) 75%, rgba(11,12,14,1) 100%)",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#E7E5E4",
+        "roles": {
+          "link": "#FDE047",
+          "accent": "#F59E0B"
+        }
+      },
+      {
+        "name": "crystal_glass_nav",
+        "kind": "glass",
+        "contrast_against": "#18181B",
+        "guarantee": "backdrop-blur-xl bg-black/75 border-b border-amber-900/20 backdrop-saturate-150",
+        "on_bg": "#FAF7F2",
+        "on_bg_muted": "#A8A29E"
+      },
+      {
+        "name": "inverse_cta",
+        "kind": "solid",
+        "bg": "#D4AF37",
+        "on_bg": "#0B0C0E",
+        "on_bg_muted": "#27272A"
+      }
+    ],
+    "accent": "#D4AF37",
+    "on_accent": "#0B0C0E"
+  },
+  "entry_surfaces": {
+    "/": "cinematic full-bleed dark hero with 3D canvas depth, masked brand reveal, floating gold metadata pill, and instant WhatsApp booking sticky bar"
+  },
+  "image_urls": {
+    "hero_cinematic_bg": {
+      "url": "https://images.unsplash.com/photo-1785337572469-c5f5e559d1ea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjB3ZWRkaW5nJTIwYnJpZGUlMjBncm9vbSUyMHBvcnRyYWl0fGVufDB8fHx8MTc5MDc3MDM0M3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Elegant bride in high-end couture dress and groom holding hands in dark moody architectural setting",
+      "placement": "Hero Section Background / Parallax Backdrop"
+    },
+    "gallery_raw_moment": {
+      "url": "https://images.unsplash.com/photo-1519741196428-6a2175fa2557?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MTJ8MHwxfHNlYXJjaHwyfHx3ZWRkaW5nJTIwcGhvdG9ncmFwaHklMjBjaW5lbWF0aWMlMjBtb21lbnR8ZW58MHx8fHwxNzkwNzcwMzQzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Intimate moment of bride and groom through ethereal veil",
+      "placement": "Philosophy & 'Raw Moment' Storytelling Section"
+    },
+    "gallery_beauty_session": {
+      "url": "https://images.unsplash.com/photo-1785338016045-7e41aaba1734?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjB3ZWRkaW5nJTIwYnJpZGUlMjBncm9vbSUyMHBvcnRyYWl0fGVufDB8fHx8MTc5MDc3MDM0M3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Joyful bride raising bouquet in bridal gown with groom smiling",
+      "placement": "Beauty Session & Prewedding Showcase"
+    },
+    "gallery_wedding_stage": {
+      "url": "https://images.unsplash.com/photo-1785256576745-cee658e536d9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3ZWRkaW5nJTIwYnJpZGUlMjBncm9vbSUyMHBvcnRyYWl0fGVufDB8fHx8MTc5MDc3MDM0M3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Couple standing regal at lavish wedding stage with floral backdrop and lighting",
+      "placement": "Wedding Packages Showcase / Stage Section"
+    },
+    "gallery_cinema_drone": {
+      "url": "https://images.unsplash.com/photo-1506355639690-a1f2a100689e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MTJ8MHwxfHNlYXJjaHw0fHx3ZWRkaW5nJTIwcGhvdG9ncmFwaHklMjBjaW5lbWF0aWMlMjBtb21lbnR8ZW58MHx8fHwxNzkwNzcwMzQzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Dramatic landscape silhouette wedding couple on cliffside at sunset with cinematic scale",
+      "placement": "Cinema Package & Drone Aerial Section"
+    },
+    "gallery_editorial_veil": {
+      "url": "https://images.unsplash.com/photo-1537633468298-d86f0c2d4173?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MTJ8MHwxfHNlYXJjaHwzfHx3ZWRkaW5nJTIwcGhvdG9ncmFwaHklMjBjaW5lbWF0aWMlMjBtb21lbnR8ZW58MHx8fHwxNzkwNzcwMzQzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Dreamy close up of bride and groom with flowing veil breeze",
+      "placement": "Prewedding / Add-ons Story Grid"
+    }
+  },
+  "content_structure_and_pricelist_data": {
+    "brand": {
+      "name": "Anez Creative",
+      "tagline": "Timeless Wedding Cinema & Visual Heirloom",
+      "location": "Padang, Sumatera Barat — Available for Destination",
+      "contact_phone": "082291840341",
+      "instagram": "@anez.creative",
+      "email": "anezcreative@gmail.com"
+    },
+    "wedding_packages": [
+      {
+        "id": "silver",
+        "name": "Silver Package",
+        "tier": "Essential Intimate",
+        "price_raw": 2600000,
+        "price_display": "Rp 2.600.000",
+        "popular": false,
+        "features": [
+          "1 Photographers On-Duty",
+          "1 Day Coverage (Up to 6 Hours)",
+          "1 Magnetic Album 20 Pages (Ukuran 20x30 cm)",
+          "50 Edited Photos (Color Grade Cinematic)",
+          "All High-Res Original Files (Google Drive Link)",
+          "1 Framed Photo 30x45 cm + Minimalist Frame",
+          "Direct Consultation & Moodboard Assistance"
+        ],
+        "wa_message": "Halo Anez Creative, saya tertarik untuk booking Wedding Package Silver (Rp 2.600.000). Apakah tanggal acara saya tersedia?"
+      },
+      {
+        "id": "gold",
+        "name": "Gold Package",
+        "tier": "Most Recommended",
+        "price_raw": 3600000,
+        "price_display": "Rp 3.600.000",
+        "popular": true,
+        "badge": "Pilihan Terfavorit",
+        "features": [
+          "2 Professional Photographers On-Duty",
+          "Full Day Wedding Coverage (Akad + Resepsi)",
+          "1 Exclusive Magazine Album 20 Pages (20x30 cm)",
+          "1 Box Exclusive Kulit / Kayu Album",
+          "100 Edited Photos (Cinematic Tone)",
+          "All Master High-Res Files in Flashdisk + Cloud Drive",
+          "2 Framed Photos (30x40 cm & 40x60 cm)",
+          "Bonus: 1 Minute Cinematic Teaser Video (Reels/TikTok)"
+        ],
+        "wa_message": "Halo Anez Creative, saya ingin menanyakan ketersediaan tanggal untuk Wedding Package Gold (Rp 3.600.000)."
+      },
+      {
+        "id": "platinum",
+        "name": "Platinum Package",
+        "tier": "Ultimate Royal Heirloom",
+        "price_raw": 5600000,
+        "price_display": "Rp 5.600.000",
+        "popular": false,
+        "badge": "Signature Luxury",
+        "features": [
+          "2 Lead Photographers + 1 Videographer",
+          "Full Day Unlimited Event Coverage",
+          "2 Exclusive Custom Photobooks (20x30 cm & 30x30 cm)",
+          "Custom Engraved Wooden Box + Flashdisk 64GB",
+          "150+ Edited High-End Fine Art Photos",
+          "Cinematic Wedding Highlight Film (3-5 Menit)",
+          "Full Video Dokumentasi Acara (30-60 Menit)",
+          "3 Framed Canvas Art (Up to 50x75 cm)",
+          "Free Pre-Wedding Mini Session (Outdoor Padang)"
+        ],
+        "wa_message": "Halo Anez Creative, saya tertarik dengan Wedding Package Platinum (Rp 5.600.000). Bisakah kita jadwalkan konsultasi konsep?"
+      }
+    ],
+    "cinema_package": {
+      "title": "Cinematic Wedding Film & Teaser",
+      "description": "Visual bergerak yang merangkum degup jantung, air mata haru, dan tawa bahagia dalam komposisi sinematik kelas festival.",
+      "items": [
+        {
+          "name": "Cinema Teaser (Reels / 60s)",
+          "price": "Rp 1.200.000",
+          "detail": "1 Menit Video Sinematik vertikal/horizontal, color grading filmis, audio audio-mastering jernih."
+        },
+        {
+          "name": "Cinema Highlight Film (3-5 Min)",
+          "price": "Rp 2.000.000",
+          "detail": "Narasi emosional, wawancara/audio janji nikah, editing musik berlisensi, 4K Master file."
+        },
+        {
+          "name": "Full Documentation Video",
+          "price": "Rp 1.800.000",
+          "detail": "Rekaman utuh prosesi akad nikah, sungkeman, adat, dan temu manten tanpa terpotong."
+        },
+        {
+          "name": "Drone Aerial 4K Cinematography",
+          "price": "Rp 850.000",
+          "detail": "Sudut pandang megah dari udara untuk venue dan iring-iringan pengantin oleh pilot tersertifikasi."
+        }
+      ]
+    },
+    "prewedding_packages": [
+      {
+        "name": "Prewedding Studio / Indoor",
+        "price": "Rp 1.500.000",
+        "detail": "3 Jam sesi pemotretan, 2 Konsep busana, 15 Foto edit tone fine art, all softcopy, 1 Cetak 40x60 + Frame."
+      },
+      {
+        "name": "Prewedding Outdoor Sumbar (Padang / Bukittinggi / Alahan Panjang)",
+        "price": "Rp 2.500.000",
+        "detail": "1 Hari penuh, 3 Lokasi & busana, 30 Foto edit warna cinematic, 2 Cetak 40x60 + Frame, Make-up artist standby available."
+      }
+    ],
+    "add_ons": [
+      {"name": "Same Day Edit (SDE) Video", "price": "Rp 1.000.000", "desc": "Video teaser diputar langsung saat resepsi malam hari"},
+      {"name": "Extra Coverage Day / Tambah Hari", "price": "Rp 1.200.000 / hari", "desc": "Untuk acara Baralek Gadang berhari-hari / Malam Bainai"},
+      {"name": "Drone Aerial Flight", "price": "Rp 850.000", "desc": "1 Pilot Drone + 4K cinematic footage"},
+      {"name": "Portable Studio Backdrop di Venue", "price": "Rp 750.000", "desc": "Spot studio mini eksklusif untuk foto keluarga inti & VIP"},
+      {"name": "Biaya Transport Luar Kota Padang", "price": "Sesuai Jarak / Reimbursable", "desc": "Bukittinggi, Payakumbuh, Solok, Pariaman, dll."}
+    ],
+    "print_and_album_catalog": [
+      {"item": "Album Magazine 20x30 (20 Hal)", "price": "Rp 700.000", "spec": "Kertas Lustre anti air, hard cover laminasi doff/gloss"},
+      {"item": "Album Photobook Leather Box 30x30", "price": "Rp 1.250.000", "spec": "Cover balutan kulit sintetis premium + box kayu ukir grafir"},
+      {"item": "Cetak Foto + Bingkai Minimalis 30x45 cm", "price": "Rp 180.000", "spec": "Frame fiber kayu doff elegan warna hitam/gold/putih"},
+      {"item": "Cetak Foto + Bingkai Ukuran 40x60 cm", "price": "Rp 275.000", "spec": "Kertas metallic pearl premium + kaca acrilic pelindung"},
+      {"item": "Cetak Canvas Premium 50x75 cm", "price": "Rp 550.000", "spec": "Tekstur kanvas asli berserat dengan spanram kayu solid"}
+    ],
+    "terms_and_conditions": [
+      {
+        "q": "Bagaimana sistem pembayaran dan booking tanggal?",
+        "a": "Booking tanggal sah setelah DP minimal 30%. Pelunasan 70% dilakukan paling lambat H-3 sebelum hari H acara. Pembayaran via transfer Bank BCA / Mandiri / BRI resmi Anez Creative."
+      },
+      {
+        "q": "Kapan file foto dan video selesai diedit?",
+        "a": "Sneak peek teaser 10-15 foto dikirimkan H+3 acara. Seluruh softcopy teredit selesai dalam 14-21 hari kerja, dan album cetak siap kirim dalam 30-45 hari kerja."
+      },
+      {
+        "q": "Apakah Anez Creative melayani luar kota Padang / luar provinsi?",
+        "a": "Ya, kami sangat sering melayani Baralek di seluruh Sumatera Barat (Bukittinggi, Solok, Payakumbuh, Pariaman, Pesisir Selatan) hingga luar kota dengan penyesuaian biaya transport & akomodasi."
+      },
+      {
+        "q": "Apakah klien bisa request tone warna atau lagu video?",
+        "a": "Tentu! Kami menyediakan sesi konsultasi moodboard pra-acara untuk menyelaraskan nuansa warna (Moody Luxury, Warm Cinematic, atau Soft Film) dan pilihan lagu kesukaan Anda."
+      }
+    ]
+  },
+  "interactive_components": {
+    "feature_1_interactive_budget_calculator": {
+      "name": "Anez Custom Package Calculator",
+      "description": "Kalkulator interaktif bagi calon pengantin untuk memilih Paket Utama + Video Cinema + Add-ons + Cetak Tambahan secara real-time dengan tombol 'Kirim Estimasi ke WhatsApp' terformat otomatis."
+    },
+    "feature_2_3d_card_tilt_and_depth": {
+      "name": "Cinematic 3D Tilt Cards",
+      "description": "Menggunakan Framer Motion 3D perspective (transform: rotateX, rotateY dengan mouse tracking) pada kartu pricelist dengan gold border beam effect."
+    },
+    "feature_3_interactive_portfolio_lightbox": {
+      "name": "Luxury Photo Lightbox & Before-After Colorgrade Slider",
+      "description": "Modal full screen viewing untuk hasil foto resolusi tinggi dan slider interaktif 'Raw Camera vs Cinematic Color Grading Anez'."
+    },
+    "feature_4_sticky_booking_dock": {
+      "name": "Floating Concierge Bar",
+      "description": "Bottom dock bar minimalis elegan dengan quick action: 'Pilih Paket', 'Kalkulator', dan tombol WhatsApp langsung (0822-9184-0341)."
+    }
+  },
+  "motion_and_interactions": {
+    "engine": "framer-motion + Canvas WebGL Ambient Gold Dust Particles",
+    "scrolling": "Smooth momentum scroll feel with staggered entrance reveals",
+    "transitions": {
+      "fade_up": "initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}",
+      "hover_card": "whileHover={{ y: -6, scale: 1.015 }} transition={{ duration: 0.3 }}",
+      "gold_border_shimmer": "linear-gradient moving border animation via css @keyframes shimmer"
+    }
+  },
+  "accessibility_and_contrast": {
+    "wcag_target": "WCAG AA (APCA calibrated for Dark Luxury Theme)",
+    "text_contrast_guarantee": "All body text #F5F3EF / #A8A29E against #0B0C0E exceeds 9.5:1 contrast ratio. Gold accents (#D4AF37) used exclusively for large titles, borders, icons, and filled buttons with #0B0C0E dark text for 8.2:1 contrast.",
+    "focus_states": "focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+    "reduced_motion": "Wrap particle animations and heavy transforms in CSS media query (prefers-reduced-motion: reduce) fallback."
+  },
+  "component_structure": {
+    "main_entry": "/app/frontend/src/App.tsx",
+    "home_page": "/app/frontend/src/pages/Home.tsx",
+    "css_theme_tokens": "/app/frontend/src/index.css",
+    "components": [
+      {"path": "frontend/src/components/Navbar.tsx", "purpose": "Crystal glass sticky navbar with logo, nav links (Pricelist, Cinema, Prewed, Add-ons, Kontak), and WhatsApp CTA"},
+      {"path": "frontend/src/components/Hero.tsx", "purpose": "Cinematic Hero with Canvas gold particle ambient, masked editorial headline, date badge, and direct booking trigger"},
+      {"path": "frontend/src/components/EditorialPhilosophy.tsx", "purpose": "3-column asymmetric storytelling grid (Raw Moment, Beauty Session, Wedding Stage) with high-res photography"},
+      {"path": "frontend/src/components/PricelistWedding.tsx", "purpose": "3-Tier Wedding Packages (Silver, Gold, Platinum) with 3D tilt hover, feature checkmarks, and WhatsApp prefilled CTA"},
+      {"path": "frontend/src/components/CinemaShowcase.tsx", "purpose": "Cinematography package grid with video player mockup, teaser pricing, and drone add-on"},
+      {"path": "frontend/src/components/PreweddingSection.tsx", "purpose": "Studio vs Outdoor West Sumatra packages with photo gallery cards"},
+      {"path": "frontend/src/components/AddonsAndPrintCatalog.tsx", "purpose": "Tabbed interactive view of Add-ons (SDE, Drone, Studio) & Luxury Print/Album price table"},
+      {"path": "frontend/src/components/CustomPackageCalculator.tsx", "purpose": "Interactive live price builder with real-time subtotal & WhatsApp export"},
+      {"path": "frontend/src/components/ColorGradeComparison.tsx", "purpose": "Interactive slider showing Raw vs Signature Anez Cinematic Color Grade"},
+      {"path": "frontend/src/components/FaqSection.tsx", "purpose": "Accordion for Terms & Conditions and Booking Policy"},
+      {"path": "frontend/src/components/Footer.tsx", "purpose": "High-contrast massive serif brand footer with Instagram @anez.creative, phone 082291840341, address Padang, and copyright"},
+      {"path": "frontend/src/components/FloatingWhatsAppDock.tsx", "purpose": "Sticky mobile & desktop floating concierge button for instant booking"}
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Retheme /app/frontend/src/index.css: import '@fontsource-variable/playfair-display' and '@fontsource-variable/dm-sans' and '@fontsource-variable/jetbrains-mono'. Set --font-heading: 'Playfair Display Variable', serif; --font-sans: 'DM Sans Variable', sans-serif; --font-mono: 'JetBrains Mono Variable', monospace. Set dark theme tokens with background #0B0C0E and gold accent #D4AF37.",
+    "Ensure dark mode is enabled on <html> tag in index.html (class='dark') so the rich dark luxury palette renders immediately.",
+    "Use Lucide icons and SiInstagram from '@icons-pack/react-simple-icons' for authentic brand markings.",
+    "Implement the WhatsApp link generator function: `https://wa.me/6282291840341?text=${encodeURIComponent(message)}` on all package CTA buttons and custom calculator.",
+    "Integrate all packages from the PDF: Silver (Rp 2.6jt), Gold (Rp 3.6jt), Platinum (Rp 5.6jt), Cinema package, Prewedding, Add-ons (SDE Rp 1jt, Drone Rp 850rb, etc.), and Print/Album Catalog with high fidelity.",
+    "Add test IDs (`data-testid`) on all key pricing cards, package buttons, calculator inputs, tab triggers, FAQ accordions, and WhatsApp links for test suite compatibility."
+  ]
+}
