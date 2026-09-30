@@ -8,9 +8,11 @@ import WeddingPackages from "@/components/WeddingPackages";
 import CinemaSection from "@/components/CinemaSection";
 import PreweddingSection from "@/components/PreweddingSection";
 import Gallery from "@/components/Gallery";
+import InstagramSection from "@/components/InstagramSection";
 import Calculator from "@/components/Calculator";
 import AddonsPrint from "@/components/AddonsPrint";
 import Testimonials from "@/components/Testimonials";
+import BookingForm from "@/components/BookingForm";
 import TermsSection from "@/components/TermsSection";
 import Footer from "@/components/Footer";
 import FloatingDock from "@/components/FloatingDock";
@@ -29,10 +31,12 @@ export default function Home() {
       <WeddingPackages />
       <CinemaSection />
       <PreweddingSection />
-      <Gallery />
-      <Calculator />
       <AddonsPrint />
+      <Calculator />
+      <Gallery />
+      <InstagramSection />
       <Testimonials />
+      <BookingForm />
       <TermsSection />
       <Footer />
       <FloatingDock />

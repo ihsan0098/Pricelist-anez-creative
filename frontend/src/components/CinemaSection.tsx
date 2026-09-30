@@ -14,7 +14,7 @@ export default function CinemaSection() {
   const bgY = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
 
   return (
-    <section ref={ref} id="cinema" data-testid="cinema-section" className="relative overflow-hidden py-28 sm:py-36">
+    <section ref={ref} id="cinema" data-testid="cinema-section" className="relative isolate overflow-hidden py-28 sm:py-36">
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-10">
         <img
           src="/img/pdf_17.webp"

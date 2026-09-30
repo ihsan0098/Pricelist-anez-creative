@@ -1,36 +1,46 @@
+export type GalleryFilter = "Wedding" | "Prewedding" | "Pelaminan";
+
+export const GALLERY_FILTERS: { id: "Semua" | GalleryFilter; label: string }[] = [
+  { id: "Semua", label: "Semua" },
+  { id: "Wedding", label: "Wedding" },
+  { id: "Prewedding", label: "Prewedding" },
+  { id: "Pelaminan", label: "Pelaminan" },
+];
+
 export interface GalleryPhoto {
   src: string;
   alt: string;
   cat: string;
+  group: GalleryFilter;
 }
 
 export const GALLERY: GalleryPhoto[] = [
-  { src: "/img/pdf_01.webp", alt: "Pengantin dengan busana adat Minangkabau", cat: "Wedding" },
-  { src: "/img/pdf_03.webp", alt: "Sesi prewedding outdoor bernuansa putih", cat: "Prewedding" },
-  { src: "/img/pdf_04.webp", alt: "Pengantin di pelaminan adat bernuansa emas", cat: "Pelaminan" },
-  { src: "/img/pdf_05.webp", alt: "Momen prewedding di taman", cat: "Prewedding" },
-  { src: "/img/pdf_06.webp", alt: "Prosesi akad penuh khidmat", cat: "Wedding" },
-  { src: "/img/pdf_07.webp", alt: "Pengantin berjalan bersama selepas prosesi", cat: "Wedding" },
-  { src: "/img/pdf_08.webp", alt: "Pengantin di dalam rumah adat", cat: "Pelaminan" },
-  { src: "/img/pdf_09.webp", alt: "Pasangan di depan Rumah Gadang", cat: "Wedding" },
-  { src: "/img/pdf_10.webp", alt: "Momen di pelaminan bernuansa taman", cat: "Wedding" },
-  { src: "/img/pdf_11.webp", alt: "Prewedding bernuansa alam", cat: "Prewedding" },
-  { src: "/img/pdf_12.webp", alt: "Momen mesra calon pengantin", cat: "Prewedding" },
-  { src: "/img/pdf_13.webp", alt: "Detail pelaminan adat", cat: "Pelaminan" },
-  { src: "/img/pdf_14.webp", alt: "Beauty session pengantin berhijab", cat: "Beauty" },
-  { src: "/img/pdf_15.webp", alt: "Sesi prewedding dengan bingkai unik", cat: "Prewedding" },
-  { src: "/img/pdf_16.webp", alt: "Prewedding dengan nuansa modern", cat: "Prewedding" },
-  { src: "/img/pdf_17.webp", alt: "Sesi sinematik di air terjun", cat: "Prewedding" },
-  { src: "/img/pdf_18.webp", alt: "Pengantin di pelaminan megah", cat: "Pelaminan" },
-  { src: "/img/pdf_19.webp", alt: "Momen sakral di pelaminan", cat: "Pelaminan" },
-  { src: "/img/pdf_20.webp", alt: "Raw moment persiapan pengantin", cat: "Raw Moment" },
-  { src: "/img/pdf_21.webp", alt: "Detail undangan dan stationery", cat: "Detail" },
-  { src: "/img/pdf_22.webp", alt: "Beauty session dengan cahaya lembut", cat: "Beauty" },
-  { src: "/img/pdf_23.webp", alt: "Foto bersama keluarga di wedding stage", cat: "Wedding Stage" },
-  { src: "/img/pdf_24.webp", alt: "Keluarga besar di pelaminan", cat: "Wedding Stage" },
-  { src: "/img/pdf_25.webp", alt: "Prosesi adat di pelaminan", cat: "Pelaminan" },
-  { src: "/img/pdf_26.webp", alt: "Pasangan di anak tangga Rumah Gadang", cat: "Wedding" },
-  { src: "/img/pdf_27.webp", alt: "Beauty session pengantin di taman", cat: "Beauty" },
+  { src: "/img/pdf_01.webp", alt: "Pengantin dengan busana adat Minangkabau", cat: "Wedding", group: "Wedding" },
+  { src: "/img/pdf_03.webp", alt: "Sesi prewedding outdoor bernuansa putih", cat: "Prewedding", group: "Prewedding" },
+  { src: "/img/pdf_04.webp", alt: "Pengantin di pelaminan adat bernuansa emas", cat: "Pelaminan", group: "Pelaminan" },
+  { src: "/img/pdf_05.webp", alt: "Momen prewedding di taman", cat: "Prewedding", group: "Prewedding" },
+  { src: "/img/pdf_06.webp", alt: "Prosesi akad penuh khidmat", cat: "Wedding", group: "Wedding" },
+  { src: "/img/pdf_07.webp", alt: "Pengantin berjalan bersama selepas prosesi", cat: "Wedding", group: "Wedding" },
+  { src: "/img/pdf_08.webp", alt: "Pengantin di dalam rumah adat", cat: "Pelaminan", group: "Pelaminan" },
+  { src: "/img/pdf_09.webp", alt: "Pasangan di depan Rumah Gadang", cat: "Wedding", group: "Wedding" },
+  { src: "/img/pdf_10.webp", alt: "Momen di pelaminan bernuansa taman", cat: "Wedding", group: "Wedding" },
+  { src: "/img/pdf_11.webp", alt: "Prewedding bernuansa alam", cat: "Prewedding", group: "Prewedding" },
+  { src: "/img/pdf_12.webp", alt: "Momen mesra calon pengantin", cat: "Prewedding", group: "Prewedding" },
+  { src: "/img/pdf_13.webp", alt: "Detail pelaminan adat", cat: "Pelaminan", group: "Pelaminan" },
+  { src: "/img/pdf_14.webp", alt: "Beauty session pengantin berhijab", cat: "Beauty", group: "Wedding" },
+  { src: "/img/pdf_15.webp", alt: "Sesi prewedding dengan bingkai unik", cat: "Prewedding", group: "Prewedding" },
+  { src: "/img/pdf_16.webp", alt: "Prewedding dengan nuansa modern", cat: "Prewedding", group: "Prewedding" },
+  { src: "/img/pdf_17.webp", alt: "Sesi sinematik di air terjun", cat: "Prewedding", group: "Prewedding" },
+  { src: "/img/pdf_18.webp", alt: "Pengantin di pelaminan megah", cat: "Pelaminan", group: "Pelaminan" },
+  { src: "/img/pdf_19.webp", alt: "Momen sakral di pelaminan", cat: "Pelaminan", group: "Pelaminan" },
+  { src: "/img/pdf_20.webp", alt: "Raw moment persiapan pengantin", cat: "Raw Moment", group: "Wedding" },
+  { src: "/img/pdf_21.webp", alt: "Detail undangan dan stationery", cat: "Detail", group: "Wedding" },
+  { src: "/img/pdf_22.webp", alt: "Beauty session dengan cahaya lembut", cat: "Beauty", group: "Wedding" },
+  { src: "/img/pdf_23.webp", alt: "Foto bersama keluarga di wedding stage", cat: "Wedding Stage", group: "Pelaminan" },
+  { src: "/img/pdf_24.webp", alt: "Keluarga besar di pelaminan", cat: "Wedding Stage", group: "Pelaminan" },
+  { src: "/img/pdf_25.webp", alt: "Prosesi adat di pelaminan", cat: "Pelaminan", group: "Pelaminan" },
+  { src: "/img/pdf_26.webp", alt: "Pasangan di anak tangga Rumah Gadang", cat: "Wedding", group: "Wedding" },
+  { src: "/img/pdf_27.webp", alt: "Beauty session pengantin di taman", cat: "Beauty", group: "Wedding" },
 ];
 
 export interface Testimonial {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, MessageCircle } from "lucide-react";
+import { SiInstagram } from "@icons-pack/react-simple-icons";
 import { BRAND, waLink } from "@/lib/data";
 import { scrollToId } from "@/lib/scroll";
 import { ease } from "@/components/motion-primitives";
@@ -9,8 +10,9 @@ const LINKS = [
   { label: "Tentang", href: "#tentang" },
   { label: "Paket", href: "#paket" },
   { label: "Cinema", href: "#cinema" },
-  { label: "Galeri", href: "#galeri" },
   { label: "Kalkulator", href: "#kalkulator" },
+  { label: "Galeri", href: "#galeri" },
+  { label: "Booking", href: "#booking" },
   { label: "Kontak", href: "#kontak" },
 ];
 
@@ -71,6 +73,16 @@ export default function Navbar() {
             </button>
           ))}
           <a
+            data-testid="nav-instagram"
+            href={BRAND.instagramUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram Anez Creative"
+            className="grid h-9 w-9 place-items-center rounded-full border border-white/15 text-stone-300 transition-colors hover:border-gold hover:text-gold"
+          >
+            <SiInstagram size={14} />
+          </a>
+          <a
             data-testid="nav-wa-cta"
             href={waLink("Halo Anez Creative! Saya ingin konsultasi tanggal & paket dokumentasi pernikahan.")}
             target="_blank"
@@ -78,7 +90,7 @@ export default function Navbar() {
             className="flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-[13px] font-semibold text-[#0B0C0E] transition-transform duration-300 hover:scale-[1.04]"
           >
             <MessageCircle size={15} />
-            Booking
+            Chat WA
           </a>
         </nav>
 

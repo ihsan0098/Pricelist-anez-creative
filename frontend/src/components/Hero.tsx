@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import { ArrowDown, MessageCircle, MapPin } from "lucide-react";
+import { ArrowDown, MessageCircle, MapPin, CalendarDays } from "lucide-react";
+import { SiInstagram } from "@icons-pack/react-simple-icons";
 import { BRAND, waLink } from "@/lib/data";
 import { scrollToId } from "@/lib/scroll";
 import { MaskedLine, TiltCard, ease } from "@/components/motion-primitives";
@@ -64,7 +65,7 @@ export default function Hero() {
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
   return (
-    <section ref={ref} id="beranda" data-testid="hero-section" className="grain relative flex min-h-screen items-center overflow-hidden">
+    <section ref={ref} id="beranda" data-testid="hero-section" className="grain relative isolate flex min-h-screen items-center overflow-hidden">
       <motion.div style={{ y: bgY }} className="absolute inset-0 -z-10">
         <img
           src="/img/pdf_18.webp"
@@ -85,11 +86,11 @@ export default function Hero() {
             </span>
           </MaskedLine>
 
-          <h1 className="mt-7 font-heading text-[13vw] font-medium leading-[1.02] tracking-tight text-stone-100 sm:text-6xl lg:text-7xl">
-            <MaskedLine delay={0.3}>Merangkai Kisah</MaskedLine>
-            <MaskedLine delay={0.45}>Menjadi Memori</MaskedLine>
+          <h1 className="mt-7 font-heading text-[12.5vw] font-medium leading-[1.02] tracking-tight text-stone-100 sm:text-6xl lg:text-7xl">
+            <MaskedLine delay={0.3}>Capturing sacred</MaskedLine>
+            <MaskedLine delay={0.45}>moments</MaskedLine>
             <MaskedLine delay={0.6}>
-              <span className="text-gold-gradient italic">yang Abadi.</span>
+              <span className="text-gold-gradient italic">with soul.</span>
             </MaskedLine>
           </h1>
 
@@ -99,9 +100,9 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.85, ease }}
             className="mt-7 max-w-xl text-base leading-relaxed text-stone-300 md:text-lg"
           >
-            Kami percaya setiap prosesi adat dan momen pernikahan adalah cerita yang unik.
-            Anez Creative berkomitmen merangkai kisah tersebut menjadi memori visual yang
-            berkesan — untuk diwariskan kepada generasi berikutnya.
+            Foto & video pernikahan dari Padang, Sumatera Barat. Setiap prosesi adat dan
+            momen sakral kami abadikan dengan jiwa — untuk dikenang hari ini, dan
+            diwariskan kepada generasi berikutnya.
           </motion.p>
 
           <motion.div
@@ -118,6 +119,14 @@ export default function Hero() {
               Lihat Pricelist
               <ArrowDown size={16} className="transition-transform duration-300 group-hover:translate-y-0.5" />
             </button>
+            <button
+              data-testid="hero-form-cta"
+              onClick={() => scrollToId("#booking")}
+              className="flex items-center gap-3 rounded-full border border-gold/60 px-7 py-3.5 text-sm font-semibold text-gold backdrop-blur transition-colors duration-300 hover:bg-gold/10"
+            >
+              <CalendarDays size={16} />
+              Cek Tanggal Acara
+            </button>
             <a
               data-testid="hero-booking-cta"
               href={waLink("Halo Anez Creative! Saya ingin konsultasi tanggal & paket dokumentasi pernikahan.")}
@@ -126,7 +135,7 @@ export default function Hero() {
               className="flex items-center gap-3 rounded-full border border-stone-500/60 px-7 py-3.5 text-sm font-semibold text-stone-200 backdrop-blur transition-colors duration-300 hover:border-gold hover:text-gold"
             >
               <MessageCircle size={16} />
-              Booking WhatsApp
+              WhatsApp
             </a>
           </motion.div>
         </div>
@@ -145,14 +154,20 @@ export default function Hero() {
                   className="aspect-[4/5] w-full object-cover"
                 />
               </div>
-              <div
+              <a
                 data-testid="hero-metadata-pill"
-                className="animate-floaty absolute -bottom-6 -left-8 rounded-2xl border border-gold/30 bg-[#141518]/90 px-5 py-3.5 backdrop-blur-xl"
+                href={BRAND.instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="animate-floaty absolute -bottom-6 -left-8 flex items-center gap-3 rounded-2xl border border-gold/30 bg-[#141518]/90 px-5 py-3.5 backdrop-blur-xl transition-colors hover:border-gold"
                 style={{ transform: "translateZ(50px)" }}
               >
-                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold">{BRAND.instagram}</p>
-                <p className="mt-1 font-heading text-sm italic text-stone-200">Wedding Cinema & Visual Heirloom</p>
-              </div>
+                <SiInstagram size={18} className="text-gold" />
+                <span>
+                  <span className="block font-mono text-[10px] uppercase tracking-[0.25em] text-gold">{BRAND.instagram}</span>
+                  <span className="mt-1 block font-heading text-sm italic text-stone-200">Capturing sacred moments with soul</span>
+                </span>
+              </a>
             </TiltCard>
           </motion.div>
         </div>

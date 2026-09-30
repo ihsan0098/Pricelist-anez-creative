@@ -61,6 +61,9 @@ async def get_status_checks():
     return [StatusCheck(**status_check) for status_check in status_checks]
 
 # Include the router in the main app
+from routers.bookings import router as bookings_router
+
+api_router.include_router(bookings_router)
 app.include_router(api_router)
 
 app.add_middleware(

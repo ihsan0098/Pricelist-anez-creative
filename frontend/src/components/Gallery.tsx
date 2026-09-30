@@ -1,20 +1,24 @@
-import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
-import { Reveal, ease } from "@/components/motion-primitives";
-import { GALLERY } from "@/lib/gallery";
+import { ease } from "@/components/motion-primitives";
+import { GALLERY, GALLERY_FILTERS, type GalleryPhoto } from "@/lib/gallery";
+
+type FilterId = (typeof GALLERY_FILTERS)[number]["id"];
 
 function Lightbox({
+  photos,
   index,
   onClose,
   onNav,
 }: {
+  photos: GalleryPhoto[];
   index: number;
   onClose: () => void;
   onNav: (dir: 1 | -1) => void;
 }) {
-  const photo = GALLERY[index];
+  const photo = photos[index];
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -68,7 +72,7 @@ function Lightbox({
       </button>
 
       <motion.figure
-        key={index}
+        key={photo.src}
         initial={{ opacity: 0, scale: 0.94, rotateY: 6 }}
         animate={{ opacity: 1, scale: 1, rotateY: 0 }}
         transition={{ duration: 0.5, ease }}
@@ -84,7 +88,7 @@ function Lightbox({
         <figcaption className="mt-4 flex items-center justify-between gap-4">
           <span className="font-heading text-sm italic text-stone-300">{photo.alt}</span>
           <span data-testid="lightbox-counter" className="font-mono text-[11px] tracking-[0.25em] text-gold">
-            {String(index + 1).padStart(2, "0")} / {String(GALLERY.length).padStart(2, "0")}
+            {String(index + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}
           </span>
         </figcaption>
       </motion.figure>
@@ -92,56 +96,143 @@ function Lightbox({
   );
 }
 
+function FilterBar({ active, onChange }: { active: FilterId; onChange: (id: FilterId) => void }) {
+  const counts = useMemo(() => {
+    const c: Record<string, number> = { Semua: GALLERY.length };
+    for (const p of GALLERY) c[p.group] = (c[p.group] ?? 0) + 1;
+    return c;
+  }, []);
+
+  return (
+    <LayoutGroup id="gallery-filter">
+      <div
+        data-testid="gallery-filters"
+        role="tablist"
+        aria-label="Filter kategori galeri"
+        className="mt-12 flex flex-wrap gap-2.5 rounded-full border border-white/10 bg-card/70 p-1.5 backdrop-blur sm:inline-flex"
+      >
+        {GALLERY_FILTERS.map((f) => {
+          const isActive = f.id === active;
+          return (
+            <button
+              key={f.id}
+              role="tab"
+              aria-selected={isActive}
+              data-testid={`gallery-filter-${f.id.toLowerCase()}`}
+              onClick={() => onChange(f.id)}
+              className={`relative flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-300 ${
+                isActive ? "text-[#0B0C0E]" : "text-stone-300 hover:text-gold"
+              }`}
+            >
+              {isActive && (
+                <motion.span
+                  layoutId="gallery-filter-pill"
+                  transition={{ duration: 0.45, ease }}
+                  className="absolute inset-0 rounded-full bg-gold"
+                />
+              )}
+              <span className="relative">{f.label}</span>
+              <span
+                className={`relative font-mono text-[10px] tracking-wider ${
+                  isActive ? "text-[#0B0C0E]/70" : "text-gold/70"
+                }`}
+              >
+                {String(counts[f.id] ?? 0).padStart(2, "0")}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+    </LayoutGroup>
+  );
+}
+
 export default function Gallery() {
+  const [filter, setFilter] = useState<FilterId>("Semua");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const photos = useMemo(
+    () => (filter === "Semua" ? GALLERY : GALLERY.filter((p) => p.group === filter)),
+    [filter]
+  );
 
   const nav = useCallback(
     (dir: 1 | -1) =>
-      setOpenIndex((i) => (i === null ? i : (i + dir + GALLERY.length) % GALLERY.length)),
-    []
+      setOpenIndex((i) => (i === null ? i : (i + dir + photos.length) % photos.length)),
+    [photos.length]
   );
 
   return (
     <section id="galeri" data-testid="gallery-section" className="py-28 sm:py-36">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <SectionHeading
-          overline="Portofolio"
-          title={
-            <>
-              Jejak visual dari <span className="italic text-gold">hari-hari bahagia</span>
-            </>
-          }
-          description="Kumpulan karya asli Anez Creative — klik foto mana pun untuk melihatnya layar penuh."
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <SectionHeading
+            overline="Portofolio"
+            title={
+              <>
+                Jejak visual dari <span className="italic text-gold">hari-hari bahagia</span>
+              </>
+            }
+            description="Kumpulan karya asli Anez Creative — pilih kategori, lalu klik foto mana pun untuk melihatnya layar penuh."
+          />
+          <p
+            data-testid="gallery-result-count"
+            className="font-mono text-[11px] uppercase tracking-[0.25em] text-stone-500 lg:pb-2"
+          >
+            Menampilkan {String(photos.length).padStart(2, "0")} foto
+          </p>
+        </div>
+
+        <FilterBar
+          active={filter}
+          onChange={(id) => {
+            setFilter(id);
+            setOpenIndex(null);
+          }}
         />
 
-        <div data-testid="gallery-grid" className="mt-16 columns-2 gap-4 md:columns-3 xl:columns-4">
-          {GALLERY.map((photo, i) => (
-            <Reveal key={photo.src} delay={(i % 4) * 0.07} className="mb-4 break-inside-avoid">
-              <button
-                data-testid={`gallery-item-${i}`}
-                onClick={() => setOpenIndex(i)}
-                aria-label={`Perbesar foto: ${photo.alt}`}
-                className="group relative block w-full overflow-hidden rounded-2xl border border-white/10 transition-colors duration-300 hover:border-gold/50"
+        <motion.div
+          layout
+          data-testid="gallery-grid"
+          className="mt-10 columns-2 gap-4 md:columns-3 xl:columns-4"
+        >
+          <AnimatePresence mode="popLayout" initial={false}>
+            {photos.map((photo, i) => (
+              <motion.div
+                key={photo.src}
+                layout
+                initial={{ opacity: 0, scale: 0.9, y: 24 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.45, ease, delay: (i % 4) * 0.04 }}
+                className="mb-4 break-inside-avoid"
               >
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
-                />
-                <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <span className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] text-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  {photo.cat}
-                </span>
-              </button>
-            </Reveal>
-          ))}
-        </div>
+                <button
+                  data-testid={`gallery-item-${i}`}
+                  onClick={() => setOpenIndex(i)}
+                  aria-label={`Perbesar foto: ${photo.alt}`}
+                  className="group relative block w-full overflow-hidden rounded-2xl border border-white/10 transition-colors duration-300 hover:border-gold/50"
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    className="w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                  />
+                  <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.2em] text-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    {photo.cat}
+                  </span>
+                </button>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
 
       <AnimatePresence>
         {openIndex !== null && (
-          <Lightbox index={openIndex} onClose={() => setOpenIndex(null)} onNav={nav} />
+          <Lightbox photos={photos} index={openIndex} onClose={() => setOpenIndex(null)} onNav={nav} />
         )}
       </AnimatePresence>
     </section>

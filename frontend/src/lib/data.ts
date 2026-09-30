@@ -2,11 +2,11 @@ export const BRAND = {
   name: "Anez Creative",
   tagline: "Photography & Videography",
   location: "Padang, Sumatera Barat, Indonesia",
-  phone: "0822-9184-0341",
-  wa: "6282291840341",
+  phone: "0857-6656-4437",
+  wa: "6285766564437",
   email: "aanneezz15@gmail.com",
   instagram: "@anez.creative",
-  instagramUrl: "https://instagram.com/anez.creative",
+  instagramUrl: "https://www.instagram.com/anez.creative/",
 };
 
 export const waLink = (message: string) =>
