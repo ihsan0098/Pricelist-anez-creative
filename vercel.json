@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "cd frontend && yarn install --frozen-lockfile",
+  "buildCommand": "cd frontend && yarn build",
+  "outputDirectory": "frontend/dist",
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.py" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
+}

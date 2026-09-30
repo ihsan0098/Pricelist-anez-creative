@@ -163,7 +163,7 @@ export default function AdminBookings() {
         <header className="flex items-center justify-between">
           <Link to="/" data-testid="admin-back-home" className="flex items-center gap-3 text-stone-400 hover:text-gold">
             <ArrowLeft size={16} />
-            <LogoMark size={30} />
+            <LogoMark size={36} />
           </Link>
           {unlocked && (
             <div className="flex items-center gap-2">

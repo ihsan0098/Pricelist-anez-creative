@@ -91,7 +91,7 @@ export default function Footer() {
 
         <div className="mt-20 flex flex-col items-center gap-6 border-t border-white/10 pt-10">
           <div className="flex items-center gap-3">
-            <LogoMark size={52} />
+            <LogoMark size={64} />
           </div>
           <p className="text-center font-heading text-lg italic text-gold/90">
             “Capturing sacred moments with soul.”

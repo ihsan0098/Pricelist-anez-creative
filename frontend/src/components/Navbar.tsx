@@ -57,7 +57,7 @@ export default function Navbar() {
           className="flex items-center gap-3"
           aria-label="Anez Creative - kembali ke atas"
         >
-          <LogoMark size={38} />
+          <LogoMark size={44} />
         </button>
 
         <nav className="hidden items-center gap-7 lg:flex">
