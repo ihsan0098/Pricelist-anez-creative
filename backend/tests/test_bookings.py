@@ -47,3 +47,23 @@ def test_list_and_update_status(client):
 def test_verify_admin(client):
     assert client.post("/bookings/verify-admin", headers=ADMIN).status_code == 204
     assert client.post("/bookings/verify-admin").status_code == 401
+
+
+def test_create_booking_missing_name(client):
+    payload = {**PAYLOAD}
+    payload.pop("name")
+    assert client.post("/bookings", json=payload).status_code == 422
+
+
+def test_create_booking_rejects_bad_event_type(client):
+    r = client.post("/bookings", json={**PAYLOAD, "event_type": "Sunatan"})
+    assert r.status_code == 422
+
+
+def test_list_sorted_by_event_date(client):
+    client.post("/bookings", json={**PAYLOAD, "event_date": "2029-05-05", "name": "Zeta Klien"})
+    client.post("/bookings", json={**PAYLOAD, "event_date": "2028-02-02", "name": "Alpha Klien"})
+    rows = client.get("/bookings", headers=ADMIN).json()
+    dates = [b["event_date"] for b in rows]
+    assert dates == sorted(dates)
+

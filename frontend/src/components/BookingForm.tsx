@@ -201,7 +201,7 @@ export default function BookingForm() {
                           required
                           type="tel"
                           inputMode="tel"
-                          pattern="[0-9+\s-]{9,20}"
+                          pattern="[0-9+\s\-]{9,20}"
                           value={form.whatsapp}
                           onChange={(e) => set("whatsapp")(e.target.value)}
                           placeholder="08xx xxxx xxxx"
