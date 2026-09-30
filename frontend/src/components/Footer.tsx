@@ -91,10 +91,7 @@ export default function Footer() {
 
         <div className="mt-20 flex flex-col items-center gap-6 border-t border-white/10 pt-10">
           <div className="flex items-center gap-3">
-            <LogoMark size={40} />
-            <span className="font-heading text-2xl tracking-wide text-stone-100">
-              Anez <span className="italic text-gold">Creative</span>
-            </span>
+            <LogoMark size={52} />
           </div>
           <p className="text-center font-heading text-sm italic text-stone-500">
             {BRAND.tagline} — {BRAND.location}

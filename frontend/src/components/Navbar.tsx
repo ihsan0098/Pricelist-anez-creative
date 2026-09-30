@@ -7,23 +7,21 @@ import { ease } from "@/components/motion-primitives";
 
 const LINKS = [
   { label: "Tentang", href: "#tentang" },
-  { label: "Paket Wedding", href: "#paket" },
+  { label: "Paket", href: "#paket" },
   { label: "Cinema", href: "#cinema" },
-  { label: "Prewedding", href: "#prewedding" },
-  { label: "Add-ons", href: "#addons" },
+  { label: "Galeri", href: "#galeri" },
+  { label: "Kalkulator", href: "#kalkulator" },
   { label: "Kontak", href: "#kontak" },
 ];
 
 export function LogoMark({ size = 34 }: { size?: number }) {
   return (
-    <span
-      className="grid place-items-center rounded-full border border-gold/50"
-      style={{ width: size, height: size }}
-    >
-      <span className="font-heading italic leading-none text-gold" style={{ fontSize: size * 0.5 }}>
-        A
-      </span>
-    </span>
+    <img
+      src="/img/logo.png"
+      alt="Anez Creative"
+      style={{ height: size }}
+      className="w-auto object-contain"
+    />
   );
 }
 
@@ -57,10 +55,7 @@ export default function Navbar() {
           className="flex items-center gap-3"
           aria-label="Anez Creative - kembali ke atas"
         >
-          <LogoMark />
-          <span className="font-heading text-lg tracking-wide text-stone-100">
-            Anez <span className="italic text-gold">Creative</span>
-          </span>
+          <LogoMark size={38} />
         </button>
 
         <nav className="hidden items-center gap-7 lg:flex">

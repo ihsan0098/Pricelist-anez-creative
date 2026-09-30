@@ -4,6 +4,7 @@ import { Clapperboard, Film, Video, MessageCircle } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/motion-primitives";
 import { cinemaItems, waLink, bookMsg } from "@/lib/data";
+import CinematicTeaser from "@/components/CinematicTeaser";
 
 const ICONS = [Clapperboard, Film, Video];
 
@@ -33,6 +34,12 @@ export default function CinemaSection() {
           }
           description="Abadikan setiap getaran emosi hari bahagia Anda melalui lensa sinematik kami. Setiap potongan klip diambil secara natural (candid) untuk menjaga kemurnian emosi, dirangkai menjadi mahakarya visual yang tak lekang oleh waktu."
         />
+
+        <Reveal delay={0.2}>
+          <div className="mt-14">
+            <CinematicTeaser />
+          </div>
+        </Reveal>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {cinemaItems.map((item, i) => {

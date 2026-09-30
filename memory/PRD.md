@@ -35,7 +35,15 @@
 - Floating WhatsApp dock, favicon monogram "A" emas, responsif mobile + menu hamburger
 - Verifikasi: typecheck bersih, curl /api 200 via URL publik, screenshot semua flow (desktop+mobile), 0 console error
 
+## Update 2026-09-30 (iterasi 2)
+- Logo navbar & footer diganti memakai logo asli dari PDF (dirender ulang, dibuat transparan: /img/logo.png & logo-gold.png)
+- Galeri Lightbox: 26 foto portofolio dari PDF, grid masonry, klik → layar penuh dengan navigasi prev/next + keyboard (Esc/panah), counter
+- Kalkulator Paket: pilih paket wedding (single) + cinema/prewedding/add-ons/cetak (multi), total estimasi real-time, kirim rincian ke WhatsApp terformat. Data numerik di src/lib/calculator.ts
+- Testimoni Klien: 3 kartu 3D tilt. CATATAN: kutipan & 2 nama masih CONTOH — perlu diganti testimoni asli
+- Video Teaser: montase sinematik (Ken Burns crossfade + letterbox) dari 5 foto portofolio asli di section Cinema — BUKAN file video; ganti dengan video asli (mp4/YouTube/IG) jika user mengirimkannya
+- Verifikasi: typecheck bersih; lightbox nav/counter/esc OK; kalkulator total akurat (3,6jt+1,25jt+750rb+250rb = Rp 5.850.000) & pesan WA terformat; teaser & testimoni tampil
+
 ## Backlog / Next Tasks
-- P0: (tidak ada blocker)
-- P1: Galeri portofolio lightbox dari 27 foto PDF; kalkulator estimasi paket interaktif dengan export ke WhatsApp
-- P2: Section testimoni klien; embed video teaser; form booking tanggal tersimpan ke MongoDB; SEO metadata lengkap + Open Graph
+- P0: Minta user: video teaser asli (mp4/link YouTube/IG) + testimoni klien asli untuk menggantikan konten contoh
+- P1: Form booking tanggal tersimpan ke MongoDB; filter kategori di galeri
+- P2: SEO metadata lengkap + Open Graph; animasi before/after color grading
